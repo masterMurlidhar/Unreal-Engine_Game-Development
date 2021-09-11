@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
     CodeB = 6;
     CodeC = 3;
 
-    // Constant variable [ const ]
+    // Constant variable [ const ]...
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
 
@@ -33,10 +33,31 @@ int main(int argc, char const *argv[])
     std::cout << "+ The Codes Join Upto: " << CodeSum << std::endl;
     std::cout << "+ The Codes Product Upto: " << CodeProduct << std::endl;
 
-    std::cout << "\n\tNow, Enter The Code:\t";
+
+    // Inputs...
+    int GuessA, GuessB, GuessC;
+    std::cout << "\n\tNow, Enter The Code: ";
+    std::cin >> GuessA >> GuessB >> GuessC;
+    // std::cout << "You Entered: " << GuessA << GuessB << GuessC;
+
+    
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA * GuessB * GuessC;
 
 
-    int PlayerGuess;
+    // if & else statements...
+    if (GuessSum == CodeSum && GuessProduct == CodeProduct)
+    {
+        std::cout << "\n\t\t\t Welcome To The ASAI'S Datacentre Facility :)\n\n";
+    }
+
+    else
+    {
+        std::cout << "\n\t\t Alert! There's A Breach In The Datacentre Facility :(\n\n";
+    }
+
+
+    // Functions...
 
 
 
