@@ -7,6 +7,7 @@
 #include <iostream>
 
 
+// User Defined Functions
 void GameIntro()
 {
     std::cout << "\n\t\t\t\"ASAI's Research Lab Is Under Attack, Break The Codes To Get Into The Datacentre Facility, Cut The Hard Line & Save The Research Data From Going Into Wrong Hands...\"\n\n\n";
@@ -16,6 +17,8 @@ void GameIntro()
 
 void PlayGame()
 {
+    GameIntro();
+
     int CodeA = 3;
     int CodeB = 6;
     int CodeC = 9;
@@ -47,10 +50,18 @@ void PlayGame()
 }
 
 
+// Main Function
 int main(int argc, char const *argv[])
 {
-    GameIntro();
-    PlayGame();
+    // While Loop
+    while (true)
+    {
+        PlayGame();
+        std::cin.clear();   // Clears any error...
+        std::cin.ignore();  // Discard the buffer...
+        
+    }
 
     return 0;
 }
+
