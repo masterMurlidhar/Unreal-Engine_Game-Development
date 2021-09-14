@@ -32,7 +32,7 @@ void PlayGame()
     std::cout << "+ The Codes Product Upto: " << CodeProduct << std::endl;
 
     int GuessA, GuessB, GuessC;
-    std::cout << "\n\tNow, Enter The Code: ";
+    std::cout << "\n\tNow, Enter The Codes: ";
     std::cin >> GuessA >> GuessB >> GuessC;
     
     int GuessSum = GuessA + GuessB + GuessC;
@@ -45,6 +45,7 @@ void PlayGame()
     else
     {
         std::cout << "\n\t\t Alert! There's A Breach In The Datacentre Facility :(\n\n";
+        std::cout << "\tWell, The Codes Were: " << CodeA << CodeB << CodeC << std::endl;
     }
 
 }
@@ -64,4 +65,6 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+
+
 
