@@ -8,16 +8,17 @@
 
 
 // User Defined Functions
-void GameIntro()
+void GameIntro(int Difficulty)
 {
-    std::cout << "\n\t\t\t\"ASAI's Research Lab Is Under Attack, Break The Codes To Get Into The Datacentre Facility, Cut The Hard Line & Save The Research Data From Going Into Wrong Hands...\"\n\n\n";
+    std::cout << "\n\t\t\"ASAI's Research Lab Is Under Attack, Break The Codes To Get Into The 'Level "<< Difficulty; 
+    std::cout << "' Secured Datacentre Facility, Cut The Hard Line & Save The Research Data From Going Into The Wrong Hands...\"\n\n\n";
 
 }
 
 
-void PlayGame()
+bool PlayGame()     // bool must return boolean...
 {
-    GameIntro();
+    GameIntro(9);
 
     int CodeA = 3;
     int CodeB = 6;
@@ -26,7 +27,7 @@ void PlayGame()
     int CodeSum = CodeA + CodeB + CodeC;
     int CodeProduct = CodeA * CodeB * CodeC;
 
-    std::cout << ">_    Here's Some Information About The Codes...\n\n";
+    std::cout << ">_    Here's Some Informations About The Code...\n\n";
     std::cout << "+ The Total Numbers Of Code: 3\n";
     std::cout << "+ The Codes Join Upto: " << CodeSum << std::endl;
     std::cout << "+ The Codes Product Upto: " << CodeProduct << std::endl;
@@ -41,11 +42,13 @@ void PlayGame()
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
         std::cout << "\n\t\t\t Welcome To The ASAI'S Datacentre Facility :)\n\n";
-    }
+        return true;
+    }   
     else
     {
         std::cout << "\n\t\t Alert! There's A Breach In The Datacentre Facility :(\n\n";
-        std::cout << "\tWell, The Codes Were: " << CodeA << CodeB << CodeC << std::endl;
+        // std::cout << "\tWell, The Codes Were: " << CodeA << CodeB << CodeC << std::endl;
+        return false;
     }
 
 }
@@ -53,13 +56,21 @@ void PlayGame()
 
 // Main Function
 int main(int argc, char const *argv[])
-{
+{   
+    int LevelDifficulty = 1;    // Remember The Variable Scope...
+
     // While Loop
     while (true)
-    {
-        PlayGame();
+    {   
+        bool bLevelComplete = PlayGame();
         std::cin.clear();   // Clears any error...
         std::cin.ignore();  // Discard the buffer...
+        if (bLevelComplete)
+
+        {
+            ++LevelDifficulty;    // LevelDefficulty = LevelDifficulty + 1
+        }
+        
         
     }
 
